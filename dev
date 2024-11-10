@@ -1,0 +1,51 @@
+https://stackoverflow.com/questions/39478482/how-to-create-development-branch-from-master-on-github
+
+stakes@kelethin:~/Desktop/mygit$ ls
+as  bash  c  html  music  README.md  test
+stakes@kelethin:~/Desktop/mygit$ cd test
+stakes@kelethin:~/Desktop/mygit/test$ git checkout -b dev
+Switched to a new branch 'dev'
+stakes@kelethin:~/Desktop/mygit/test$ git branch -a
+* dev
+  main
+  remotes/origin/main
+echo "# dev branch" >> dev
+stakes@kelethin:~/Desktop/mygit/test$ git add .
+stakes@kelethin:~/Desktop/mygit/test$ git commit -m "whatever"
+[dev 406a9d0] whatever
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dev
+stakes@kelethin:~/Desktop/mygit/test$ git push -u origin dev
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 270 bytes | 270.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/oddlej/test/pull/new/dev
+remote: 
+To github.com:oddlej/test.git
+ * [new branch]      dev -> dev
+branch 'dev' set up to track 'origin/dev'.
+stakes@kelethin:~/Desktop/mygit/test$ 
+
+edited dev file locally
+
+stakes@kelethin:~/Desktop/mygit/test$ git add .
+stakes@kelethin:~/Desktop/mygit/test$ git commit -m "again"
+[dev 90134ce] again
+ 1 file changed, 34 insertions(+), 1 deletion(-)
+stakes@kelethin:~/Desktop/mygit/test$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 817 bytes | 817.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:oddlej/test.git
+   406a9d0..90134ce  dev -> dev
+stakes@kelethin:~/Desktop/mygit/test$ 
+
+
